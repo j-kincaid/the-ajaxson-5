@@ -29,7 +29,7 @@ function fetchAndDisplayGif(event) {
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson 5 dance" // TODO should be e.g. "jackson 5 dance"
+        tag: "https://giphy.com/search/jackson-5-dance" // TODO should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
