@@ -4,6 +4,9 @@
 // January 12, 2019
 // LC101 JavaScript
 
+// My API key from GIPHY is 
+
+// 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
 
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
