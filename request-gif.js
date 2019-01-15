@@ -4,11 +4,18 @@
 // January 12, 2019
 // LC101 JavaScript
 
-// My API key from GIPHY is 
 
+var model = {
+    fetchGifs: [],
+    loadGifs: []
+}
+
+
+// My API key from GIPHY is 
 // 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
+
 var api = {
-    root: "https://api.giphy.com/v1/gifs/random",
+    root: "https://api.giphy.com/v1/gifs",
     token: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL"
 }
 
@@ -31,12 +38,12 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = "https://giphy.com/search/"; // TODO should be e.g. "dance"
+    var searchQuery = "https://giphy.com/search/dance"; // TODO should be e.g. "dance"
 
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "/search/jackson5/random" // TODO should be e.g. "jackson 5 dance"
+        tag: "jackson5" // TODO should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
