@@ -7,6 +7,10 @@
 // My API key from GIPHY is 
 
 // 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
+var api = {
+    root: "https://api.giphy.com/v1/gifs/random",
+    token: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL"
+}
 
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
@@ -32,18 +36,18 @@ function fetchAndDisplayGif(event) {
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "/search/jackson-5/random" // TODO should be e.g. "jackson 5 dance"
+        tag: "/search/jackson5/random" // TODO should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
     $.ajax({
-        url: api.root + "/search/jackson-5", // TODO where should this request be sent?
+        url: api.root + params, // TODO where should this request be sent?
         data: {
             // attach those extra parameters onto the request
             api_key: api.token,
-            query: query
+            query: searchQuery
 
-        }
+        },
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
 
