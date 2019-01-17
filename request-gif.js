@@ -5,6 +5,15 @@
 // LC101 JavaScript
 
 
+// The things we're working with are:
+// form-gif-request
+// input name="tag"
+// p id="feedback"
+
+var model = {
+    form - gif - request: [],
+    feedback: []
+}
 
 // My API key from GIPHY is 
 // 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
