@@ -5,11 +5,6 @@
 // LC101 JavaScript
 
 
-var model = {
-    fetchGifs: [],
-    loadGifs: []
-}
-
 
 // My API key from GIPHY is 
 // 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
