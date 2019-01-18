@@ -10,11 +10,6 @@
 // input name="tag"
 // p id="feedback"
 
-var model = {
-    form - gif - request: [],
-    feedback: []
-}
-
 // My API key from GIPHY is 
 // 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
 
@@ -42,17 +37,19 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = "https://giphy.com/search/dance"; // TODO should be e.g. "dance"
+    var searchQuery = "dance"; // TODO should be e.g. "dance"
 
+
+    // USE jQuery to populate the ssearchQuery with the user's tag input text
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson5" // TODO should be e.g. "jackson 5 dance"
+        tag: "jackson 5" // TODO should be e.g. "jackson 5 dance"  
     };
 
     // make an ajax request for a random GIF
     $.ajax({
-        url: api.root + params, // TODO where should this request be sent?
+        url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent?
         data: {
             // attach those extra parameters onto the request
             api_key: api.token,
