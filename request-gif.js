@@ -5,19 +5,6 @@
 // LC101 JavaScript
 
 
-// The things we're working with are:
-// form-gif-request
-// input name="tag"
-// p id="feedback"
-
-// My API key from GIPHY is 
-// 6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL 
-
-var api = {
-    root: "https://api.giphy.com/v1/gifs",
-    token: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL"
-}
-
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
@@ -37,25 +24,18 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = "dance"; // TODO should be e.g. "dance"
+    var searchQuery = ""; // TODO should be e.g. "dance"
 
-
-    // USE jQuery to populate the ssearchQuery with the user's tag input text
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson 5" // TODO should be e.g. "jackson 5 dance"  
+        tag: "jackson 5 dance" // TODO should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
     $.ajax({
-        url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent?
-        data: {
-            // attach those extra parameters onto the request
-            api_key: api.token,
-            query: searchQuery
-
-        },
+        url: api.root + "", // TODO where should this request be sent?
+        data: params, // attach those extra parameters onto the request
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
 
