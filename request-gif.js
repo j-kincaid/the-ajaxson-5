@@ -4,10 +4,6 @@
 // January 12, 2019
 // LC101 JavaScript
 
-var model = {
-    requestGif: [],
-    displayGif: []
-}
 
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
@@ -28,7 +24,7 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = ""; // TODO should be e.g. "dance"
+    var searchQuery = "dance"; // TODO should be e.g. "dance"
 
     // configure a few parameters to attach to our request
     var params = {
@@ -38,8 +34,11 @@ function fetchAndDisplayGif(event) {
 
     // make an ajax request for a random GIF
     $.ajax({
-        url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent?
-        data: params, // attach those extra parameters onto the request
+        url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent? (DONE)
+        data: {
+            params, // attach those extra parameters onto the request
+            query: searchQuery
+        },
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
 
@@ -49,8 +48,9 @@ function fetchAndDisplayGif(event) {
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
-            var img = $("<img></img>").gif = $().attr()
-                // 2. hide the feedback message and display the image
+            url = $("<img></img>").attr(response);
+            // 2. hide the feedback message and display the image
+            setGifLoadedStatus(true);
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
@@ -60,12 +60,12 @@ function fetchAndDisplayGif(event) {
             setGifLoadedStatus(false);
         }
     });
-
-    // TODO (DONE)
-    // give the user a "Loading..." message while they wait
-    $("#loading").text("Loading...");
-    setGifLoadedStatus(false);
 }
+// TODO (DONE)
+// give the user a "Loading..." message while they wait
+$("#loading").text("Loading...");
+setGifLoadedStatus(false);
+
 
 
 /**
