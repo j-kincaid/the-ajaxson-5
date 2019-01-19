@@ -4,6 +4,10 @@
 // January 12, 2019
 // LC101 JavaScript
 
+var model = {
+    requestGif: [],
+    displayGif: []
+}
 
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
@@ -29,12 +33,12 @@ function fetchAndDisplayGif(event) {
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson 5 dance" // TODO should be e.g. "jackson 5 dance"
+        tag: "jackson+5" // TODO should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
     $.ajax({
-        url: api.root + "", // TODO where should this request be sent?
+        url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent?
         data: params, // attach those extra parameters onto the request
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
@@ -45,7 +49,8 @@ function fetchAndDisplayGif(event) {
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
-            // 2. hide the feedback message and display the image
+            var img = $("<img></img>").gif = $().attr()
+                // 2. hide the feedback message and display the image
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
@@ -56,7 +61,7 @@ function fetchAndDisplayGif(event) {
         }
     });
 
-    // TODO
+    // TODO (DONE)
     // give the user a "Loading..." message while they wait
     $("#loading").text("Loading...");
     setGifLoadedStatus(false);
