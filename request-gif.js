@@ -48,7 +48,7 @@ function fetchAndDisplayGif(event) {
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
-            url = $("<img></img>").attr(response);
+            $("#gif").attr(response);
             // 2. hide the feedback message and display the image
             setGifLoadedStatus(true);
         },
