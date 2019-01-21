@@ -24,7 +24,7 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = "dance"; // TODO should be e.g. "dance"
+    var searchQuery = ""; // TODO should be e.g. "dance"
 
     // configure a few parameters to attach to our request
     var params = {
@@ -50,6 +50,9 @@ function fetchAndDisplayGif(event) {
             // 1. set the source attribute of our image to the image_url of the GIF
             $("#gif").attr(response);
             // 2. hide the feedback message and display the image
+
+            $("#feedback p").empty();
+            $("#loading p").empty();
             setGifLoadedStatus(true);
         },
         error: function() {
