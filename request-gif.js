@@ -64,7 +64,10 @@ function fetchAndDisplayGif(event) {
             // if something went wrong, the code in here will execute instead of the success function
 
             // give the user an error message
-            $("#feedback").text("Sorry, could not load GIF. Try again!");
+            // $("#feedback").text("Sorry, could not load GIF. Try again!");
+
+
+
             setGifLoadedStatus(false);
         }
     });
