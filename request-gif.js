@@ -52,7 +52,7 @@ function fetchAndDisplayGif(event) {
             // 2. hide the feedback message and display the image
 
             $("#feedback p").empty();
-            $("#loading p").empty();
+
             setGifLoadedStatus(true);
         },
         error: function() {
@@ -64,9 +64,9 @@ function fetchAndDisplayGif(event) {
         }
     });
 }
-// TODO (DONE)
+// TODO 
 // give the user a "Loading..." message while they wait
-$("#loading").text("Loading...");
+$("#response").text("Loading...");
 setGifLoadedStatus(false);
 
 
