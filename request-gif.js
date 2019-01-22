@@ -39,20 +39,6 @@ function fetchAndDisplayGif(event) {
         tag: "jackson 5" // DONE should be e.g. "jackson 5 dance"
     };
 
-    // Ashley's code: vvv
-    // --------------------
-    // var params = {
-    //     api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-    //     tag: "jackson 5" // TODO should be e.g. "jackson 5 dance"
-    // };
-    // $.ajax({
-    //     url: "https://api.giphy.com/v1/gifs/random", // DONE where should this request be sent?
-    //     data: params, // attach those extra parameters onto the request
-    //     success: function(response) {
-
-    // Ashley's code:  ^^^
-    // --------------------
-
     // make an ajax request for a random GIF
     $.ajax({
         url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent? (DONE)
