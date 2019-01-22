@@ -11,6 +11,13 @@ $(document).ready(function() {
 });
 
 
+// jQuery functions to use:
+
+// $(someSelector).attr() $("img").attr("width","500");
+// $(someSelector).html() $("img").html("<p></p>");
+// $(someSelector).val() use with input
+// $(someSelector).find() returns descendant elements of selected element
+
 /**
  * sends an asynchronous request to Giphy.com aksing for a random GIF using the 
  * user's search term (along with "jackson 5")
@@ -24,12 +31,12 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = ""; // TODO should be e.g. "dance"
+    var searchQuery = "dance"; // TODO should be e.g. "dance"
 
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson+5" // TODO should be e.g. "jackson 5 dance"
+        tag: "jackson 5" // TODO should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
