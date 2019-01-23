@@ -8,6 +8,19 @@
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
+    // $('#numData').keyup(function() {
+    //     if ($(this).val() != 5) {
+    //         $(document.body).append("No GIFs for you");
+    //         $(this).val('5');
+    //     }
+    // });
+
+    // $("button").keyup(function() {
+    //     if ($(this).val() != 5) {
+    //         document.write("No GIFs for you!");
+    //         $(this).val('5');
+    //     }
+    // })
 });
 
 
@@ -31,19 +44,17 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // set some variables to handle the data that you'll need to before the gif request is sent so that'd be the search query text and the "5"
+    // make that bit that sends the request part of a else statement. Make the an if statement that checks that num-validate info
 
-    let formData = $("form-validate").val();
-
-    function getFromData(formData) {
-        console.log(formData);
-    }
     // get the user's input text from the DOM
     var searchQuery = "dance"; // TODO should be e.g. "dance"
+    var "#numData" = 5;
 
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson 5" // DONE should be e.g. "jackson 5 dance"
+        tag: "jackson 5", // DONE should be e.g. "jackson 5 dance"
+
     };
 
     // make an ajax request for a random GIF
@@ -51,33 +62,43 @@ function fetchAndDisplayGif(event) {
         url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent? (DONE)
         data: params, // attach those extra parameters onto the request
 
-        success: function(response) {
-            // if the response comes back successfully, the code in here will execute.
+        $("#numData").keyup(function() {
+                if ($(this).val() != 5) {
 
-            // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
-            console.log("we received a response!");
-            console.log(response);
+                    setGifLoadedStatus(false);
+                    // $(document.body).append("No GIFs for you");
+                    $("#response").text("No GIFs for you");
 
-            // TODO
-            // 1. set the source attribute of our image to the image_url of the GIF
-            $("#gif").attr("src", response.data.image_url);
-            // 2. hide the feedback message and display the image
+                    $(this).val('5');
+                }
 
-            $("#feedback p").empty();
+                success: function(response) {
+                        // if the response comes back successfully, the code in here will execute.
 
-            setGifLoadedStatus(true);
-        },
-        error: function() {
-            // if something went wrong, the code in here will execute instead of the success function
+                        // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
+                        console.log("we received a response!");
+                        console.log(response);
 
-            // give the user an error message
-            // $("#feedback").text("Sorry, could not load GIF. Try again!");
+                        // TODO
+                        // 1. set the source attribute of our image to the image_url of the GIF
+                        $("#gif").attr("src", response.data.image_url);
+                        // 2. hide the feedback message and display the image
+
+                        $("#feedback p").empty();
+
+                        setGifLoadedStatus(true);
+                    },
+                    error: function() {
+                        // if something went wrong, the code in here will execute instead of the success function
+
+                        // give the user an error message
+                        // $("#feedback").text("Sorry, could not load GIF. Try again!");
 
 
+                        // $("#feedback").text("No GIFs for you.");
 
-            $("#feedback").text("No GIFs for you.");
-
-            setGifLoadedStatus(false);
+                        // setGifLoadedStatus(false);
+                    })
         }
     });
 }
