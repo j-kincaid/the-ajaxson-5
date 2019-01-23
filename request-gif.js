@@ -30,6 +30,13 @@ function fetchAndDisplayGif(event) {
     // Because we will be making our own AJAX request, we dont need to send a normal request and we definitely don't want the page to refresh.
     event.preventDefault();
 
+    // set some variables to handle the data that you'll need to before the gif request is sent so that'd be the search query text and the "5"
+
+    let formData = $("form-validate").val();
+
+    function getFromData(formData) {
+        console.log(formData);
+    }
     // get the user's input text from the DOM
     var searchQuery = "dance"; // TODO should be e.g. "dance"
 
@@ -65,6 +72,8 @@ function fetchAndDisplayGif(event) {
 
             // give the user an error message
             // $("#feedback").text("Sorry, could not load GIF. Try again!");
+
+
 
             $("#feedback").text("No GIFs for you.");
 
