@@ -8,35 +8,10 @@
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
-    // $('#numData').keyup(function() {
-    //     if ($(this).val() != 5) {
-    //         $(document.body).append("No GIFs for you");
-    //         $(this).val('5');
-    //     }
-    // });
 
-    // $("button").keyup(function() {
-    //     if ($(this).val() != 5) {
-    //         document.write("No GIFs for you!");
-    //         $(this).val('5');
-    //     }
-    // })
 });
 
 
-// jQuery functions to use:
-
-// $(someSelector).attr() $("img").attr("width","500");
-// $(someSelector).html() $("img").html("<p></p>");
-// $(someSelector).val() use with input
-// $(someSelector).find() returns descendant elements of selected element
-
-/**
- * sends an asynchronous request to Giphy.com aksing for a random GIF using the 
- * user's search term (along with "jackson 5")
- * 
- * upon receiving a response from Giphy, updates the DOM to display the new GIF
- */
 function fetchAndDisplayGif(event) {
 
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
@@ -91,9 +66,6 @@ function fetchAndDisplayGif(event) {
             // give the user an error message
             $("#feedback").text("Sorry, could not load GIF. Try again!");
 
-
-
-
             setGifLoadedStatus(false);
         }
 
@@ -102,7 +74,7 @@ function fetchAndDisplayGif(event) {
 
 // TODO 
 // give the user a "Loading..." message while they wait
-$("#response").text("Loading...");
+$("#response").html("<p>Loading...</p>");
 setGifLoadedStatus(false);
 
 
