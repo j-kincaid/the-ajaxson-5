@@ -78,8 +78,6 @@ function fetchAndDisplayGif(event) {
 
 // TODO 
 // give the user a "Loading..." message while they wait
-$("#response").html("<p>Loading...</p>");
-setGifLoadedStatus(false);
 
 $("#gif").on("load", function() {
     $("#picture").hide();
