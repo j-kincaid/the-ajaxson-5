@@ -26,7 +26,7 @@ function fetchAndDisplayGif(event) {
     var numberCheck = $('#numData').val();
 
     if (numberCheck != 5) {
-        $("#feedback").text("No GIFs for you.");
+        $("#feedback").html("<p style='color:red;'> No GIFs for you.</p>");
     }
 
 
