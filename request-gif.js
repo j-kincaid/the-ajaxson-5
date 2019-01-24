@@ -8,7 +8,7 @@
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
-
+    $("#gif").hide();
 });
 
 
@@ -22,11 +22,12 @@ function fetchAndDisplayGif(event) {
     // make that bit that sends the request part of a else statement. Make the an if statement that checks that num-validate info
 
     // get the user's input text from the DOM
-    var searchQuery = "dance"; // TODO should be e.g. "dance"
+    var searchQuery = $("#query").text(); // TODO should be e.g. "dance"
     var numberCheck = $('#numData').val();
 
     if (numberCheck != 5) {
-        $("#feedback").html("<p style='color:red;'> No GIFs for you.</p>");
+        $("#gif").hide();
+        $("#numCheck").html("No GIFs for you.");
     }
 
 
@@ -58,6 +59,7 @@ function fetchAndDisplayGif(event) {
             $("#feedback p").empty();
 
             setGifLoadedStatus(true);
+            $("#gif").show();
         },
 
         error: function() {
