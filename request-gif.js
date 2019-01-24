@@ -48,6 +48,11 @@ function fetchAndDisplayGif(event) {
 
     // get the user's input text from the DOM
     var searchQuery = "dance"; // TODO should be e.g. "dance"
+    var numberCheck = $('#numData').val();
+
+    if (numberCheck != 5) {
+        $("#feedback").text("No GIFs for you.");
+    }
 
 
     // configure a few parameters to attach to our request
