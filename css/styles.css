@@ -3,3 +3,18 @@ The AJAXson 5
 Jessica Kincaid
 January 22, 2019
 LC101 JavaScript  */
+
+header {
+    display: flex
+}
+
+title {
+    flex-direction: row;
+    margin: 4em;
+}
+
+img {
+    margin: 2em;
+    border-radius: 4em;
+    max-width: 50vh;
+}

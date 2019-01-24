@@ -14,7 +14,7 @@ LC101 JavaScript -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
-    <link rel="stylesheet" href="css/ctyles.css">
+    <link rel="stylesheet" src="css/ctyles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
 
 </head>
@@ -25,32 +25,39 @@ LC101 JavaScript -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <form id="form-gif-request" />
     <header>
-        <img src="images/Jackson_5.jpg">
+        <!-- <img src="images/Jackson_5.jpg"> -->
     </header>
-    <div>
-        <label for="tag">What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text" id="query" />
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+
+                <label for="tag" class="form-control">What kind of Jackson 5 related gif do you want?</label>
+                <input class="form-control" aria-describedby="basic-addon1" name="tag" class="form-control" type="text" id="query" />
+            </span>
+
+                <p id="feedback" hidden="true"></p>
+            </div>
+
+            <div class="input-group" id="prove">
+                <br />
+                <p>Prove you are not a robot by answering this riddle:</p>
+                <input name="numTest" type="number" id="numTest" />
+
+                <label for="numTest" style="font-weight:bold;">Jacksons are better than 1.</label>
+                <p id="numError"></p>
+            </div>
+
+            <br />
+
+
+
+            <input type="submit" value="Get my Gif!" />
+            </form>
+        </div>
+        <img id="gif" src="" hidden="true" />
+        <p id="response" hidden="true"></p>
         <p id="feedback" hidden="true"></p>
-
-    </div>
-    <!-- DONE -->
-
-    <br />
-    <p>Prove you are not a robot by answering this riddle:</p>
-    <input name="numTest" type="number" id="numTest" />
-
-    <label for="numTest" style="font-weight:bold;">Jacksons are better than 1.</label>
-    <p id="numError"></p>
-
-    <br />
-
-
-    <input type="submit" value="Get my Gif!" />
-    </form>
-
-    <img id="gif" src="" hidden="true" />
-    <p id="response" hidden="true"></p>
-    <p id="feedback" hidden="true"></p>
 
 </body>
 
