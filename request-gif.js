@@ -8,7 +8,7 @@
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
-    $("#gif").hide();
+    $("#picture").hide();
 });
 
 
@@ -23,11 +23,14 @@ function fetchAndDisplayGif(event) {
 
     // get the user's input text from the DOM
     var searchQuery = $("#query").text(); // TODO should be e.g. "dance"
-    var numberCheck = $('#numData').val();
+    var numberCheck = $('#numTest').val();
+
+    $("#gif").attr("src", "");
 
     if (numberCheck != 5) {
-        $("#gif").hide();
-        $("#numCheck").html("No GIFs for you.");
+        $("#numError").text("No GIFs for you.");
+        $("#picture").hide();
+        setGifLoadedStatus(false);
     }
 
 
@@ -59,7 +62,6 @@ function fetchAndDisplayGif(event) {
             $("#feedback p").empty();
 
             setGifLoadedStatus(true);
-            $("#gif").show();
         },
 
         error: function() {
@@ -79,6 +81,10 @@ function fetchAndDisplayGif(event) {
 $("#response").html("<p>Loading...</p>");
 setGifLoadedStatus(false);
 
+$("#gif").on("load", function() {
+    $("#picture").hide();
+});
+$("#picture").show();
 
 
 /**
