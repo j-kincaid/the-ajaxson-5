@@ -29,15 +29,15 @@ function fetchAndDisplayGif(event) {
 
     if (numberCheck != 5) {
         $("#numError").text("No GIFs for you.");
-        $("#picture").hide();
-        setGifLoadedStatus(false);
+        $("#gif").hide();
+    } else {
+        $("#numError").text("");
     }
-
 
     // configure a few parameters to attach to our request
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
-        tag: "jackson 5", // DONE should be e.g. "jackson 5 dance"
+        tag: "jackson 5" + searchQuery // DONE should be e.g. "jackson 5 dance"
     };
 
     // make an ajax request for a random GIF
@@ -51,17 +51,16 @@ function fetchAndDisplayGif(event) {
             // if the response comes back successfully, the code in here will execute.
 
             // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
-            console.log("we received a response!");
-            console.log(response);
+            // console.log("we received a response!");
+            // console.log(response);
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             $("#gif").attr("src", response.data.image_url);
             // 2. hide the feedback message and display the image
 
-            $("#feedback p").empty();
-
-            setGifLoadedStatus(true);
+            $("#feedback").attr("hidden", true);
+            $("#gif").attr("hidden", false);
         },
 
         error: function() {
