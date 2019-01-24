@@ -28,7 +28,7 @@ function fetchAndDisplayGif(event) {
     $("#gif").attr("src", "");
 
     if (numberCheck != 5) {
-        $("#numError").text("No GIFs for you.");
+        $("#numError").html("<p style='color:red;'>No GIFs for you.</p>");
         $("#gif").hide();
     } else {
         $("#numError").text("");
@@ -77,7 +77,7 @@ function fetchAndDisplayGif(event) {
 
 // TODO 
 // give the user a "Loading..." message while they wait
-
+$("#feedback").html("<p>Loading...</p>");
 $("#gif").on("load", function() {
     $("#picture").hide();
 });
