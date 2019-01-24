@@ -54,13 +54,13 @@ function fetchAndDisplayGif(event) {
     var params = {
         api_key: "6WqJOT4ORaSbgX4NQX7k7VwwmT0ub3LL",
         tag: "jackson 5", // DONE should be e.g. "jackson 5 dance"
-
     };
 
     // make an ajax request for a random GIF
     $.ajax({
         url: "https://api.giphy.com/v1/gifs/random", // TODO where should this request be sent? (DONE)
         data: params, // attach those extra parameters onto the request
+
 
 
         success: function(response) {
@@ -79,6 +79,7 @@ function fetchAndDisplayGif(event) {
 
             setGifLoadedStatus(true);
         },
+
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
 
@@ -106,6 +107,7 @@ setGifLoadedStatus(false);
  * if the GIF is loaded: displays the image and hides the feedback label
  * otherwise: hides the image and displays the feedback label
  */
+
 function setGifLoadedStatus(isCurrentlyLoaded) {
     $("#gif").attr("hidden", !isCurrentlyLoaded);
     $("#feedback").attr("hidden", isCurrentlyLoaded);
