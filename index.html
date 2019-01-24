@@ -17,13 +17,17 @@ LC101 JavaScript -->
     <h1>AJAXson 5</h1>
 
     <form id="form-gif-request" />
-    <label>What kind of Jackson 5 related gif do you want?</label>
+    <div>
+        <label>What kind of Jackson 5 related gif do you want?</label>
+
+        <p id="feedback" hidden="true"></p>
+    </div>
     <input name="tag" type="text" id="query" />
     <br />
-    <label for="numData">Prove you are not a robot by answering this riddle:</label>
+    <label for="numTest">Prove you are not a robot by answering this riddle:</label>
     <br />
 
-    <p id="feedback" hidden="true`"></p>
+    <!-- <p id="feedback" hidden="true`"></p> -->
 
     <p style="font-weight:bold;"><input type="text" id="numCheck" /> Jacksons are better than 1.</p>
     <input type="submit" id="numButton" value="Get my Gif!" />
