@@ -46,7 +46,6 @@ function fetchAndDisplayGif(event) {
         data: params, // attach those extra parameters onto the request
 
 
-
         success: function(response) {
             // if the response comes back successfully, the code in here will execute.
 

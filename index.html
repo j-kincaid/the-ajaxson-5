@@ -20,45 +20,47 @@ LC101 JavaScript -->
 </head>
 
 <body>
-    <h1>AJAXson 5</h1>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <form id="form-gif-request" />
-    <header>
-        <!-- <img src="images/Jackson_5.jpg"> -->
-    </header>
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">
+    <div class="jumbotron">
+        <h1>AJAXson 5</h1>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <form id="form-gif-request" />
+        <header>
+            <!-- <img src="images/Jackson_5.jpg"> -->
+        </header>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
 
                 <label for="tag" class="form-control">What kind of Jackson 5 related gif do you want?</label>
                 <input class="form-control" aria-describedby="basic-addon1" name="tag" class="form-control" type="text" id="query" />
             </span>
 
-                <p id="feedback" hidden="true"></p>
-            </div>
+                    <p id="feedback" hidden="true"></p>
+                </div>
 
-            <div class="input-group" id="prove">
+                <div class="input-group" id="prove">
+                    <br />
+                    <p>Prove you are not a robot by answering this riddle:</p>
+                    <input name="numTest" type="number" id="numTest" />
+
+                    <label for="numTest" style="font-weight:bold;">Jacksons are better than 1.</label>
+                    <p id="numError"></p>
+                </div>
+
                 <br />
-                <p>Prove you are not a robot by answering this riddle:</p>
-                <input name="numTest" type="number" id="numTest" />
 
-                <label for="numTest" style="font-weight:bold;">Jacksons are better than 1.</label>
-                <p id="numError"></p>
+
+                <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+                <input type="submit" class="btn btn-primary btn-lg" value="Get my Gif!" />
+                </form>
             </div>
+            <img id="gif" src="" hidden="true" />
+            <p id="response" hidden="true"></p>
+            <p id="feedback" hidden="true"></p>
 
-            <br />
-
-
-
-            <input type="submit" value="Get my Gif!" />
-            </form>
         </div>
-        <img id="gif" src="" hidden="true" />
-        <p id="response" hidden="true"></p>
-        <p id="feedback" hidden="true"></p>
-
 </body>
 
 </html>
